@@ -30,10 +30,7 @@ for (const item of btn){
     })
 }
 
-
-
 function pokemonCard (data) {
-    
     document.querySelector('.pokemon_box')
         .innerHTML = data.map((item) => 
          { return `
@@ -42,13 +39,25 @@ function pokemonCard (data) {
         <img src='${item.sprites.other.dream_world.front_default}'></img>
         <div class = 'card_text'>
         <p>${item.name}</p>
-        <img class = '${item.types[0].type.name}' src='icons/${item.types[0].type.name}.svg'/>
+        <img class = '${item.types[0].type.name}' 
+        src='icons/${item.types[0].type.name}.svg'/>
+        <img class = '${item.types[1]?.type.name}' 
+        src='icons/${item.types[1]?.type.name}.svg'/>
+        <img class = '${item.types[2]?.type.name}' 
+        src='icons/${item.types[2]?.type.name}.svg'/>
         </div>
         </div>
         `
         }).join('')
 
 }
+
+function pokemonTypeCard (data) {
+    const fetches = data.pokemon.map(item => {
+        return fetch(item.pokemon.url).then(res => res.json())
+    })
+    Promise.all(fetches).then(res => pokemonCard(res))
+   }
 function showPokemon (data) {
     document.querySelector('.pokemon_box')
         .innerHTML = 
@@ -67,5 +76,13 @@ function searchPokemon (){
 fetch(`https://pokeapi.co/api/v2/pokemon/${search_name.value}`)
 .then(res => res.json())
 .then(data => showPokemon(data))
+}
+
+function showTypes () {
+    fetch(`https://pokeapi.co/api/v2/type/${event.target.className}`)
+.then(res => res.json())
+.then(data => {
+    pokemonTypeCard(data);
+})
 }
 

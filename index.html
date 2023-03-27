@@ -14,8 +14,13 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <h1>Pokemon</h1>
     <div>
+      <h1>Pokemon</h1>
+    </div>
+    <div style="padding: 1rem;">
+      <h3>Search by generation</h1>
+    </div>
+    <div class="generations">
       <button value="1" id="generation_one">1st</button>
       <button value="2" id="generation_two">2nd</button>
       <button value="3" id="generation_three">3rd</button>
@@ -26,29 +31,32 @@
       <button value="8" id="generation_eight">8th</button>
       <button value="9" id="generation_nine">9th</button>
     </div>
+    <div style="padding: 1rem;">
+      <h3>Search by types</h3>
+    </div>
+    <div class="wrapper">
+      <img id="hello" onclick="showTypes()" class="bug" src="icons/bug.svg" />
+      <img onclick="showTypes()" class="dark" src="icons/dark.svg" />
+      <img onclick="showTypes()" class="dragon" src="icons/dragon.svg" />
+      <img onclick="showTypes()" class="electric" src="icons/electric.svg" />
+      <img onclick="showTypes()" class="fairy" src="icons/fairy.svg" />
+      <img onclick="showTypes()" class="fighting" src="icons/fighting.svg" />
+      <img onclick="showTypes()" class="fire" src="icons/fire.svg" />
+      <img onclick="showTypes()" class="flying" src="icons/flying.svg" />
+      <img onclick="showTypes()" class="ghost" src="icons/ghost.svg" />
+      <img onclick="showTypes()" class="grass" src="icons/grass.svg" />
+      <img onclick="showTypes()" class="ground" src="icons/ground.svg" />
+      <img onclick="showTypes()" class="ice" src="icons/ice.svg" />
+      <img onclick="showTypes()" class="normal" src="icons/normal.svg" />
+      <img onclick="showTypes()" class="poison" src="icons/poison.svg" />
+      <img onclick="showTypes()" class="psychic" src="icons/psychic.svg" />
+      <img onclick="showTypes()" class="rock" src="icons/rock.svg" />
+      <img onclick="showTypes()" class="steel" src="icons/steel.svg" />
+      <img onclick="showTypes()" class="water" src="icons/water.svg" />
+    </div>
     <div class="search_bar">
       <input type="text" id="search_name" />
       <label id="search_btn" onclick="searchPokemon()">Search</label>
-    </div>
-    <div class="wrapper">
-      <img class="bug" src="icons/bug.svg" />
-      <img class="dark" src="icons/dark.svg" />
-      <img class="dragon" src="icons/dragon.svg" />
-      <img class="electric" src="icons/electric.svg" />
-      <img class="fairy" src="icons/fairy.svg" />
-      <img class="fighting" src="icons/fighting.svg" />
-      <img class="fire" src="icons/fire.svg" />
-      <img class="flying" src="icons/flying.svg" />
-      <img class="ghost" src="icons/ghost.svg" />
-      <img class="grass" src="icons/grass.svg" />
-      <img class="ground" src="icons/ground.svg" />
-      <img class="ice" src="icons/ice.svg" />
-      <img class="normal" src="icons/normal.svg" />
-      <img class="poison" src="icons/poison.svg" />
-      <img class="psychic" src="icons/psychic.svg" />
-      <img class="rock" src="icons/rock.svg" />
-      <img class="steel" src="icons/steel.svg" />
-      <img class="water" src="icons/water.svg" />
     </div>
     <div class="pokemon_box"></div>
     <script src="/main.js"></script>

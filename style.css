@@ -36,12 +36,15 @@ img {
   width: 20px;
   padding: 0.2rem;
 }
+.generations {
+  padding: 1rem;
+}
 #search_btn {
   padding: 0.25rem 1rem;
   background-color: aqua;
 }
 .search_bar {
-  padding: 1rem;
+  padding: 2rem;
 }
 .wrapper {
   display: flex;
@@ -50,6 +53,10 @@ img {
 .wrapper img {
   width: 20px;
 }
+.undefined {
+  display: none;
+}
+
 .bug {
   background: #92bc2c;
   box-shadow: 0 0 20px #92bc2c;
